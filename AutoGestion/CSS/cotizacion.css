@@ -1,0 +1,199 @@
+/* ========================
+   RESET Y VARIABLES BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+:root {
+  --fondo-claro: #f1f5f9;
+  --fondo-oscuro: #1e293b;
+  --blanco: #ffffff;
+  --gris-claro: #e2e8f0;
+  --azul: #3b82f6;
+  --azul-hover: #2563eb;
+  --rojo: #ef4444;
+  --verde: #10b981;
+  --borde-translucido: rgba(255, 255, 255, 0.08);
+}
+
+html, body {
+  height: 100%;
+  background: var(--fondo-claro);
+  color: var(--fondo-oscuro);
+  overflow: hidden; /* Evita scroll */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========================
+   HEADER
+========================= */
+header {
+  background: var(--fondo-oscuro);
+  color: var(--blanco);
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.contenedor-header {
+  max-width: 1200px;
+  margin: auto;
+}
+nav {
+  margin-top: 10px;
+}
+nav a {
+  margin: 0 14px;
+  color: var(--blanco);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: var(--azul);
+}
+
+/* ========================
+   CONTENEDOR PRINCIPAL
+========================= */
+main.dashboard {
+  background: var(--fondo-oscuro);
+  padding: 20px 10px;
+  border-radius: 20px 20px 0 0;
+  max-width: 650px;
+  margin: auto;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========================
+   BLOQUE DE FORMULARIO
+========================= */
+.blur-box {
+  background: var(--borde-translucido);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--gris-claro);
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  padding: 20px 24px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  color: var(--blanco); /* Letras en blanco */
+}
+
+.blur-box h2 {
+  font-size: 19px;
+  margin-bottom: 14px;
+}
+
+/* Inputs más pequeños y compactos */
+.blur-box input,
+.blur-box textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 6px 0;
+  border-radius: 8px;
+  border: 1px solid var(--gris-claro);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--blanco);
+  font-size: 13px;
+}
+
+.blur-box input::placeholder,
+.blur-box textarea::placeholder {
+  color: var(--gris-claro);
+}
+
+.blur-box input:focus,
+.blur-box textarea:focus {
+  outline: none;
+  box-shadow: 0 0 5px var(--azul);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.blur-box button[type="submit"] {
+  margin-top: 12px;
+  padding: 10px 16px;
+  background-color: var(--azul);
+  color: var(--blanco);
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.blur-box button[type="submit"]:hover {
+  background-color: var(--azul-hover);
+}
+
+/* ========================
+   MENSAJE DE CONFIRMACIÓN
+========================= */
+.modal-confirmacion {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(30, 41, 59, 0.95);
+  color: white;
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  z-index: 9999;
+  animation: aparecerModal 0.3s ease-out forwards;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+.modal-confirmacion h2 {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.modal-confirmacion .btn-cerrar {
+  background: var(--azul);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.modal-confirmacion .btn-cerrar:hover {
+  background: var(--azul-hover);
+}
+
+@keyframes aparecerModal {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* ========================
+   FOOTER
+========================= */
+footer {
+  background: var(--fondo-oscuro);
+  height: 60px;
+  margin-top: auto;
+}

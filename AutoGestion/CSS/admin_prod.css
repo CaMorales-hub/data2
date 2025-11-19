@@ -1,0 +1,504 @@
+/* ========================
+   RESET Y VARIABLES BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+:root {
+  --fondo-claro: #f1f5f9;
+  --fondo-oscuro: #1e293b;
+  --blanco: #ffffff;
+  --gris-claro: #e2e8f0;
+  --azul: #3b82f6;
+  --azul-hover: #2563eb;
+  --rojo: #ef4444;
+  --rojo-hover: #dc2626;
+  --verde: #10b981;
+  --verde-hover: #059669;
+  --borde-translucido: rgba(255, 255, 255, 0.1);
+}
+
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--fondo-claro);
+}
+
+body {
+  min-height: 100vh;
+}
+
+main.dashboard {
+  flex: 1;
+}
+
+/* ========================
+   HEADER
+========================= */
+header {
+  background: var(--fondo-oscuro);
+  color: var(--blanco);
+  padding: 24px 0;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.contenedor-header {
+  max-width: 1200px;
+  margin: auto;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  margin: 0 14px;
+  color: var(--blanco);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--azul);
+}
+
+/* ========================
+   FOOTER
+========================= */
+footer {
+  height: 60px;
+  background: var(--fondo-oscuro);
+  margin-top: auto;
+  border: none;
+}
+
+/* ========================
+   DASHBOARD LAYOUT
+========================= */
+.dashboard {
+  flex: 1;
+  margin: 0 auto;
+  padding: 20px 40px 30px;
+  background: var(--fondo-oscuro);
+  border-radius: 20px 20px 0 0;
+  max-width: 1250px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ========================
+   BOXES
+========================= */
+.blur-box {
+  background: var(--borde-translucido);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--gris-claro);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  transition: all 0.3s ease;
+}
+
+.blur-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.blur-box h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--blanco);
+}
+
+.blur-box input,
+.blur-box textarea,
+.blur-box select {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--gris-claro);
+  color: var(--blanco);
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.blur-box input::placeholder,
+.blur-box textarea::placeholder {
+  color: var(--gris-claro);
+}
+
+.blur-box input:focus,
+.blur-box textarea:focus {
+  outline: none;
+  box-shadow: 0 0 6px var(--azul);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.blur-box button[type="submit"] {
+  margin: 20px auto 0;
+  padding: 12px 20px;
+  background-color: var(--azul);
+  color: var(--blanco);
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  text-align: center;
+}
+
+.blur-box button[type="submit"]:hover {
+  background-color: var(--azul-hover);
+}
+
+/* ========================
+   TABLA
+========================= */
+.blur-box table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.blur-box th,
+.blur-box td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.blur-box thead th {
+  background: var(--gris-claro);
+  color: var(--fondo-oscuro);
+}
+
+.blur-box tbody td {
+  color: var(--blanco);
+}
+
+.blur-box tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+img.producto-img {
+  width: 60px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================
+   BOTONES DE ACCIÓN
+========================= */
+.btn-editar,
+.btn-eliminar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-right: 6px;
+}
+
+.btn-editar {
+  background-color: var(--verde);
+}
+
+.btn-editar:hover {
+  background-color: var(--verde-hover);
+  transform: scale(1.1);
+}
+
+.btn-eliminar {
+  background-color: var(--rojo);
+}
+
+.btn-eliminar:hover {
+  background-color: var(--rojo-hover);
+  transform: scale(1.1);
+}
+
+.btn-editar i,
+.btn-eliminar i {
+  width: 18px;
+  height: 18px;
+}
+
+/* Más secciones siguen... */
+/* ========================
+   SCROLL EN LA TABLA
+========================= */
+.scroll-tabla {
+  flex-grow: 1;
+  overflow-y: auto;
+  max-height: 400px;
+  scrollbar-width: thin;
+}
+.scroll-tabla::-webkit-scrollbar {
+  width: 8px;
+}
+.scroll-tabla::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+.scroll-tabla::-webkit-scrollbar-thumb:hover {
+  background: #1e293b;
+}
+
+/* ========================
+   PANEL DERECHO DESLIZANTE
+========================= */
+.derecha {
+  display: block;
+  opacity: 0;
+  height: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transform: translateX(30px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.derecha.visible {
+  opacity: 1;
+  height: auto;
+  pointer-events: auto;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+/* ========================
+   ESTADÍSTICAS FLOTANTES
+========================= */
+.stats-panel {
+  display: none;
+  position: absolute;
+  right: 40px;
+  top: 160px;
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid var(--gris-claro);
+  color: var(--blanco);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  width: 250px;
+}
+.stats-panel.visible {
+  display: block;
+}
+.stats-panel p {
+  margin-bottom: 10px;
+}
+
+/* ========================
+   GRÁFICA DE ESTADÍSTICAS
+========================= */
+#graficaEstadisticas {
+  grid-column: 2 / 3;
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+  visibility: hidden;
+  height: auto;
+  display: block;
+}
+#graficaEstadisticas.visible {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+  visibility: visible;
+}
+#graficaEstadisticas canvas {
+  width: 100% !important;
+  max-height: 350px;
+}
+.graficas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* ========================
+   MODAL DE EDICIÓN
+========================= */
+.modal-editar {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  width: 400px;
+  max-width: 90%;
+  background: rgba(30, 41, 59, 0.95);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  animation: aparecerModal 0.3s ease forwards;
+}
+.modal-editar h2 {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* ========================
+   MODAL DE CONFIRMACIÓN
+========================= */
+.modal-confirmacion {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  width: 500px;
+  max-width: 90%;
+  background: rgba(30, 41, 59, 0.95);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  animation: aparecerModal 0.3s ease forwards;
+}
+.modal-confirmacion h2 {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* ========================
+   ANIMACIONES
+========================= */
+@keyframes aparecerModal {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+tr.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+tr.fade-out {
+  animation: fadeOut 0.5s ease forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(20px); }
+}
+/* ========================
+   CARRUSEL DE GRÁFICAS
+========================= */
+.carrusel-graficas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  position: relative;
+}
+
+.contenedor-graficas {
+  flex-grow: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 350px;
+}
+
+/* Ocultar todas las gráficas por defecto */
+.grafica-slide {
+  display: none !important;
+  width: 100% !important;
+  max-width: 700px;
+  max-height: 350px;
+}
+
+/* Mostrar solo la activa */
+.grafica-slide.visible {
+  display: block !important;
+}
+
+/* Botones del carrusel */
+.btn-carrusel {
+  background: none;
+  border: none;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  z-index: 10;
+}
+.btn-carrusel:hover {
+  color: var(--azul);
+}
+.btn-carrusel.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+/* ============================
+   BOTONES DEL CONTENEDOR IZQUIERDO
+============================ */
+.acciones-superiores {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--gris-claro);
+  border-radius: 12px;
+  color: var(--blanco);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-icon i {
+  width: 20px;
+  height: 20px;
+}
+
+.btn-icon:hover {
+  background: var(--azul);
+  transform: scale(1.05);
+}
+
+.btn-icon.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}

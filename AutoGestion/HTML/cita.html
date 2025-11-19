@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Agendar Cita</title>
+  <link rel="stylesheet" href="../CSS/cotizacion.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      width: 350px;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .form-container label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .form-container input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .form-container button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      background-color: #007BFF;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .form-container button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Agendar una Cita</h2>
+    <form action="../PHP/guardar_cita.php" method="POST">
+      <!-- Suponiendo que los IDs vienen de sesión o selección -->
+      <label for="usuario_id">ID de Usuario</label>
+      <input type="text" name="usuario_id" id="usuario_id" placeholder="Ej: 1" required>
+
+      <label for="taller_id">ID del Taller</label>
+      <input type="text" name="taller_id" id="taller_id" placeholder="Ej: 2" required>
+
+      <label for="fecha">Fecha</label>
+      <input type="date" name="fecha" id="fecha" required>
+
+      <label for="hora">Hora</label>
+      <input type="time" name="hora" id="hora" required>
+
+      <button type="submit">Agendar Cita</button>
+    </form>
+  </div>
+</body>
+</html>

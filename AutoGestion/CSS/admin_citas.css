@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap');
+
+:root {
+  --fondo-claro: #f1f5f9;
+  --fondo-oscuro: #1e293b;
+  --blanco: #ffffff;
+  --gris-claro: #e2e8f0;
+  --azul: #3b82f6;
+  --azul-hover: #2563eb;
+  --rojo: #ef4444;
+  --rojo-hover: #dc2626;
+  --verde: #10b981;
+  --borde-translucido: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--fondo-claro);
+}
+
+body {
+  min-height: 100vh;
+}
+
+header {
+  background: var(--fondo-oscuro);
+  color: var(--blanco);
+  padding: 20px 0;
+  text-align: center;
+}
+
+.contenedor-header {
+  max-width: 1200px;
+  margin: auto;
+}
+
+nav a {
+  margin: 0 12px;
+  color: white;
+  text-decoration: none;
+}
+
+.dashboard {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  padding: 30px;
+  background: var(--fondo-oscuro);
+  border-radius: 20px 20px 0 0;
+  max-width: 1250px;
+  margin: auto;
+  width: 100%;
+}
+
+.blur-box {
+  background: var(--borde-translucido);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--gris-claro);
+  border-radius: 20px;
+  padding: 30px;
+  color: white;
+}
+
+.panel-izquierdo {
+  align-self: start;
+}
+
+
+.acciones-superiores {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.btn-icon {
+  width: 42px;
+  height: 42px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid var(--gris-claro);
+  border-radius: 10px;
+  color: var(--blanco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn-icon:hover {
+  background: var(--azul);
+}
+
+.scroll-tabla {
+  overflow-y: auto;
+  max-height: 420px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: white;
+}
+
+th, td {
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+thead {
+  background: var(--gris-claro);
+  color: var(--fondo-oscuro);
+}
+
+.btn-eliminar {
+  background-color: var(--rojo);
+  color: white; /* Esto cambia el color del ícono a blanco */
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-right: 6px;
+}
+
+.btn-eliminar:hover {
+  background-color: var(--rojo-hover);
+  transform: scale(1.1);
+}
+
+
+.modal-confirmacion {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(30, 41, 59, 0.95);
+  color: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  text-align: center;
+  z-index: 1000;
+}
+
+.modal-confirmacion button {
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  min-width: 120px; /* Ajusta si lo quieres más grande */
+  white-space: nowrap; /* Evita saltos de línea */
+}
+
+
+.modal-confirmacion .btn-eliminar {
+  background: var(--rojo);
+}
+
+.modal-confirmacion .btn-eliminar:hover {
+  background: var(--rojo-hover);
+}
+
+.modal-confirmacion .btn-cancelar {
+  background: var(--gris-claro);
+  color: var(--fondo-oscuro);
+}
+
+footer {
+  background: var(--fondo-oscuro);
+  height: 60px;
+}
+.panel-izquierdo h2 {
+  text-align: center;
+  margin-bottom: 20px; /* Espacio debajo */
+}
+

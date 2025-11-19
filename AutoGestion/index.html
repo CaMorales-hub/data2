@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoGestión MX</title>
+  <link rel="stylesheet" href="CSS/index.css" />
+  <script defer src="JS/index.js"></script>
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+<body>
+  <header class="navbar">
+    <div class="logo-area">
+      <img src="IMAGE/logo.png" alt="AutoGestión MX" />
+    </div>
+    <nav class="nav-menu">
+      <a href="#quienes-somos">Quiénes somos</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#reseñas">Reseñas</a>
+      <a href="#contacto">Contacto</a>
+      <a href="HTML/login.html">Ingresar</a>
+      
+    </nav>
+  </header>
+
+  <section id="quienes-somos" class="hero">
+    <img src="IMAGE/principal.jpg" alt="Taller mecánico" />
+    <div class="hero-text">
+      <h1>AutoGestión MX</h1>
+      <p>Soluciones mecánicas para tu vehículo</p>
+    </div>
+  </section>
+
+  <section class="search-bar">
+    <input type="text" placeholder="Busca servicio, marca..." />
+    <button>Buscar</button>
+  </section>
+
+  <section id="servicios" class="services">
+    <h2>Nuestros Servicios</h2>
+    <div class="service-list">
+      <div class="service-item">Mantenimiento Nissan</div>
+      <div class="service-item">Mantenimiento Honda</div>
+      <div class="service-item">Mantenimiento Toyota</div>
+      <div class="service-item">Mantenimiento Chevrolet</div>
+      <div class="service-item">Mantenimiento Ford</div>
+      <div class="service-item">Diagnóstico general</div>
+    </div>
+  </section>
+
+  <section id="reseñas" class="reviews">
+    <h2>Lo que dicen nuestros clientes</h2>
+    <div class="review-list">
+      <div class="review-item">"Excelente servicio y confianza."</div>
+      <div class="review-item">"Profesionales y atentos."</div>
+      <div class="review-item">"Rápidos y de calidad."</div>
+    </div>
+  </section>
+
+<section class="company-values-grid">
+  <div class="value-card-img" style="background-image: url('../IMAGE/mision.jpg');">
+    <div class="value-overlay">
+      <span class="material-symbols-outlined">flag</span>
+      <h3>Misión</h3>
+      <p>Ofrecer servicios mecánicos con confianza y calidad respaldados por marcas líderes, garantizando seguridad y atención al cliente superior.</p>
+    </div>
+  </div>
+
+  <div class="value-card-img" style="background-image: url('../IMAGE/vision.jpg');">
+    <div class="value-overlay">
+      <span class="material-symbols-outlined">visibility</span>
+      <h3>Visión</h3>
+      <p>Ser la agencia de autogestión automotriz más reconocida de México, innovando en tecnología y servicio con atención personalizada.</p>
+    </div>
+  </div>
+
+  <div class="value-card-img" style="background-image: url('../IMAGE/objetivo.jpg');">
+    <div class="value-overlay">
+      <span class="material-symbols-outlined">target</span>
+      <h3>Objetivo</h3>
+      <p>Facilitar el acceso a servicios mecánicos especializados, transparentes y eficientes a través de una red confiable de aliados automotrices.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="our-brands">
+  <h2>Marcas con las que trabajamos</h2>
+  <div class="brand-carousel">
+    <div class="brand-card">
+      <img src="IMAGE/nissan.png" alt="Nissan" class="brand-logo" />
+      <div class="brand-info">
+        <h3>Nissan</h3>
+        <p>Servicio especializado para motores, suspensión y eléctricos Nissan.</p>
+      </div>
+    </div>
+    <div class="brand-card">
+      <img src="IMAGE/honda.png" alt="Honda" class="brand-logo" />
+      <div class="brand-info">
+        <h3>Honda</h3>
+        <p>Revisión integral, cambios de aceite y diagnósticos Honda.</p>
+      </div>
+    </div>
+    <div class="brand-card">
+      <img src="IMAGE/toyota.png" alt="Toyota" class="brand-logo" />
+      <div class="brand-info">
+        <h3>Toyota</h3>
+        <p>Mantenimiento preventivo y correctivo para autos Toyota.</p>
+      </div>
+    </div>
+    <div class="brand-card">
+      <img src="IMAGE/chevrolet.png" alt="Chevrolet" class="brand-logo" />
+      <div class="brand-info">
+        <h3>Chevrolet</h3>
+        <p>Diagnóstico electrónico y frenos para Chevrolet.</p>
+      </div>
+    </div>
+    <div class="brand-card">
+      <img src="IMAGE/ford.png" alt="Ford" class="brand-logo" />
+      <div class="brand-info">
+        <h3>Ford</h3>
+        <p>Especialistas en motores Ecoboost, eléctricos y gasolina Ford.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="contacto" class="contact">
+  <div class="contact-container">
+    <div class="contact-form-box">
+      <h2>Contáctanos</h2>
+      <form id="contact-form" class="contact-form">
+        <input type="text" name="nombre" placeholder="Nombre completo" required />
+        <input type="email" name="email" placeholder="Correo electrónico" required />
+        <textarea name="mensaje" rows="4" placeholder="Tu mensaje" required></textarea>
+        <button type="submit">Enviar mensaje</button>
+      </form>
+    </div>
+    <div class="contact-map-box">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.2305697533277!2d-99.14484998464084!3d19.4326086868876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f92d419b22b5%3A0x8b8bb05c171fe8d2!2sAv.%20Paseo%20de%20la%20Reforma%20123%2C%20Cuauht%C3%A9moc%2C%2006500%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX%2C%20Mexico!5e0!3m2!1sen!2sus!4v1614692734159!5m2!1sen!2sus"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-info">
+    <div>
+      <h4>Correo</h4>
+      <p>contacto@autogestionmx.com</p>
+    </div>
+    <div>
+      <h4>Teléfono</h4>
+      <p>+52 55 1234 5678</p>
+    </div>
+    <div>
+      <h4>WhatsApp</h4>
+      <p>+52 55 8765 4321</p>
+    </div>
+    <div>
+      <h4>Ubicación</h4>
+      <p>Av. Reforma 123, CDMX</p>
+    </div>
+  </div>
+
+  <div class="footer-social">
+    <a href="#"><img src="../IMAGE/whatsapp.png" alt="WhatsApp" /></a>
+    <a href="#"><img src="../IMAGE/facebook.png" alt="Facebook" /></a>
+    <a href="#"><img src="../IMAGE/instagram.png" alt="Instagram" /></a>
+  </div>
+
+  <p class="copyright">© 2025 AutoGestión MX – Soluciones automotrices profesionales</p>
+</footer>
+
+<a href="https://wa.me/526647579214" class="whatsapp-float" target="_blank">
+  <img src="IMAGE/whatsapp.png" alt="WhatsApp" />
+</a>
+
+<!-- EmailJS -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("yU2eQr-HErtcbnQIX"); // 
+  })();
+
+  document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm("service_7yl3osh", "template_re0o1vf", this)
+      .then(function() {
+        alert("Mensaje enviado con éxito. Gracias por contactarnos.");
+        document.getElementById("contact-form").reset();
+      }, function(error) {
+        alert("Hubo un error al enviar el mensaje. Intenta más tarde.");
+        console.error(error);
+      });
+  });
+</script>

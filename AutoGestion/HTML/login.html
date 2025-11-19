@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inicio de sesión - AutoGestión MX</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="../CSS/login.css" />
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo-area">
+    <img src="../IMAGE/logo.png" alt="AutoGestión MX" />
+  </div>
+  <nav class="nav-menu">
+    <a href="../HTML/index.html#inicio">Inicio</a>
+    <a href="../HTML/index.html#cotizaciones">Cotizaciones</a>
+    <a href="../HTML/index.html#citas">Citas</a>
+    <a href="../HTML/index.html#reseñas">Reseñas</a>
+  </nav>
+</header>
+
+<main class="contenedor">
+  <div class="form-box">
+
+    <!-- Formulario de inicio -->
+    <form id="loginForm" class="form active" method="POST" action="">
+      <h1>Iniciar sesión</h1>
+
+      <label for="tipo_usuario">Tipo de usuario:</label>
+      <select name="tipo_usuario" id="tipo_usuario" required>
+        <option value="">Selecciona una opción</option>
+        <option value="cliente">Cliente</option>
+        <option value="administrador">Administrador</option>
+        <option value="personal">Personal</option>
+      </select>
+
+      <label for="correo">Correo electrónico</label>
+      <input type="email" id="correo" name="correo" placeholder="usuario@ejemplo.com" required />
+
+      <label for="contrasena">Contraseña</label>
+      <input type="password" id="contrasena" name="contrasena" placeholder="Tu contraseña" required />
+
+      <button type="submit">Acceder</button>
+      <p class="registro">¿No tienes cuenta? <a href="#" onclick="toggleForm()">Regístrate</a></p>
+    </form>
+
+    <!-- Formulario de registro -->
+    <form id="registerForm" class="form" method="POST" action="../PHP/registrar.php">
+      <h1>Regístrate</h1>
+
+      <label for="nombre">Nombre completo</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+
+      <label for="correo_registro">Correo electrónico</label>
+      <input type="email" id="correo_registro" name="correo" placeholder="usuario@ejemplo.com" required />
+
+      <label for="contrasena_registro">Contraseña</label>
+      <input type="password" id="contrasena_registro" name="contrasena" placeholder="Crea una contraseña" required />
+
+      <button type="submit">Crear cuenta</button>
+      <p class="registro">¿Ya tienes cuenta? <a href="#" onclick="toggleForm()">Iniciar sesión</a></p>
+    </form>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <p>© 2025 AutoGestión MX. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+  // Redirige al login correspondiente
+  document.getElementById("loginForm").addEventListener("submit", function(e) {
+    const tipoUsuario = document.getElementById("tipo_usuario").value;
+
+    if (!tipoUsuario) {
+      e.preventDefault();
+      Swal.fire({
+        icon: 'warning',
+        title: 'Seleccione un tipo de usuario',
+        text: 'Debe elegir si es cliente, administrador o personal'
+      });
+      return;
+    }
+
+    switch (tipoUsuario) {
+      case "cliente":
+        this.action = "../PHP/login.php";
+        break;
+      case "administrador":
+        this.action = "../PHP/loginAdmin.php";
+        break;
+      case "personal":
+        this.action = "../PHP/loginPersonal.php";
+        break;
+    }
+  });
+
+  // Alternar entre login y registro
+  function toggleForm() {
+    document.getElementById("loginForm").classList.toggle("active");
+    document.getElementById("registerForm").classList.toggle("active");
+  }
+
+  // Mostrar mensajes según parámetros GET
+  const params = new URLSearchParams(window.location.search);
+
+  if (params.get("login") === "exitoso") {
+    const tipo = params.get("tipo");
+
+    Swal.fire({
+      icon: 'success',
+      title: '¡Bienvenido!',
+      text: 'Inicio de sesión exitoso',
+      showConfirmButton: false,
+      timer: 2000,
+      timerProgressBar: true
+    }).then(() => {
+      if (tipo === "cliente") {
+        window.location.href = "perfil.php";
+      } else if (tipo === "administrador") {
+        window.location.href = "administrador.php";
+      } else if (tipo === "personal") {
+        window.location.href = "personal_citas.php";
+      }
+    });
+  }
+
+  if (params.get("error") === "credenciales") {
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: 'Correo o contraseña incorrectos'
+    });
+  }
+</script>
+
+</body>
+</html>

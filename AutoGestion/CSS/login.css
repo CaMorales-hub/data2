@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(120deg, #d3d3d3 50%, #0f172a 50%);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+:root {
+  --azul: #0f172a;     /* Azul marino oscuro */
+  --blanco: #ffffff;
+  --gris: #94a3b8;     /* Gris suave para hover */
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--azul);
+  padding: 10px 20px;
+}
+.logo-area img {
+  height: 50px;
+}
+.nav-menu {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.nav-menu a {
+  color: var(--blanco);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+.nav-menu a:hover {
+  color: var(--gris);
+}
+
+
+.contenedor {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.form-box {
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 2px solid #0f172a;
+  padding: 40px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  color: #0f172a;
+}
+
+.form-box h1 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.form-box label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+.form-box input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border: 1px solid #0f172a;
+  border-radius: 8px;
+  background-color: #fff;
+  font-size: 14px;
+  outline: none;
+}
+
+.form-box input:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 5px #0056b3;
+}
+
+.form-box button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 12px;
+  background-color: #0f172a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-box button:hover {
+  background-color: #1e293b;
+}
+
+.form-box .registro {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: rgba(255, 255, 255, 0.6); /* fondo translúcido claro */
+  color: #0f172a; /* texto oscuro para contraste */
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-box .registro a {
+  color: #1d4ed8;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.form-box .registro a:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+
+
+
+.footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 14px;
+}
+.form-box {
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 2px solid #0f172a;
+  padding: 40px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  min-height: 470px;
+}
+
+/* Base */
+.form {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  pointer-events: none;
+}
+
+/* Activa el formulario visible */
+.form.active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: all;
+  position: relative;
+  left: 0;
+}
+
+/* Ocultar el formulario anterior con deslizamiento inverso */
+.form-box .form:not(.active) {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.form-box select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border: 1px solid #0f172a;
+  border-radius: 8px;
+  background-color: #fff;
+  font-size: 14px;
+  outline: none;
+}
+
+.form-box select:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 5px #0056b3;
+}
+
+
